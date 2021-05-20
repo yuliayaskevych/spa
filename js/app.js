@@ -1,0 +1,1 @@
+import Router from"./router.js";import Route from"./route.js";var router=new Router([new Route("home","home.html",!0),new Route("apps","apps.html"),new Route("simulation","simulation.html"),new Route("graasp","graasp.html"),new Route("examples","examples.html")]);

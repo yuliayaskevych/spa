@@ -1,0 +1,1 @@
+let menu=document.querySelector("menu");function mobileMenu(){menu.classList.toggle("mobileMenu")}menu.addEventListener("click",mobileMenu);
