@@ -1,0 +1,53 @@
+<header class="bgimg">
+    <h1>Зв'язок</h1>
+</header>
+<section class="content">
+    <p>У разі винекнення питання - напишіть нам</p>
+<!-- 
+    <div class="contact">
+        <form action="/action_page.php" class="g-form"> 
+            <h2 class="g-form__title g-form__title_respond"></h2>
+            <label for="fname">Ім'я</label>
+            <input type="text" id="fname" name="firstname" placeholder="Ваше ім'я.." required>
+
+            <label for="lname">Прізвище</label>
+            <input type="text" id="lname" name="lastname" placeholder="Ваше прізвище.." required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Ваш email.." required>
+
+            <textarea name="message" id="message" cols="30" rows="10"  placeholder="Опис проблеми/питання" required></textarea>
+           
+            <input type="submit" value="Відправити">
+        </form>
+    </div> -->
+    <form class="g-form" id="g-form-1" method="POST" action="" autocomplete="off">
+		<h2 class="g-form__title g-form__title_main">Оставьте заявку прямо сейчас и получите скидку 10%</h2>
+		<h2 class="g-form__title g-form__title_respond"></h2>
+		<div class="g-form__preloader"></div>
+		<div class="g-form__inputs">
+			<fieldset class="g-form__input-wrapper">
+				<input class="g-form__input g-form__input_name" id="name" name="firstname" placeholder="Введите ваше имя" required>
+			</fieldset>
+
+			<fieldset class="g-form__input-wrapper">
+				<input class="g-form__input g-form__input_tel" id="tel" name="lastname" placeholder="Введите ваш телефон">
+			</fieldset>
+
+			<fieldset class="g-form__input-wrapper">
+				<input id="email" name="email" type="email" value=""
+				required placeholder="Введите ваш email"/>
+			</fieldset>
+
+			<fieldset class="g-form__input-wrapper">
+				<input id="arbitrary-field" name="Произвольное поле" placeholder="Произвольное поле для теста">
+			</fieldset>
+
+			<div class="g-form__button-wrapper">
+				<button class="g-form__button">Получить скидку</button>
+			</div>
+		</div>
+	</form>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/contact.js"></script>
