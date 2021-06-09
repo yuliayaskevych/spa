@@ -4,7 +4,7 @@
 Практика: Інформаційний вебсайт щодо реалізації технології Inquiry Based Learning на уроках інформатики засобами екосистеми Go-Lab. Архітектура вебсайту - SPA
 
 ## Preview
-[View Live Preview](https://yuliayaskevych.github.io/spa/img/preview.png)
+[View Live Preview](https://github.com/yuliayaskevych/yuliayaskevych.github.io/spa/img/preview.png)
 
 ## Usage
 
