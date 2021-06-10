@@ -1,0 +1,490 @@
+@mixin link {
+  a {
+    text-decoration: none;
+    color: #5050d2;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// navigation
+menu {
+  font-style: normal;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+  margin: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  .icon {
+    display: none;
+  }
+  li {
+    list-style-type: none;
+    padding: 0px 14px;
+
+    a {
+      display: inline-block;
+      position: relative;
+      color: #000;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 1px;
+      line-height: 1;
+
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 1.7px;
+        width: 0%;
+        left: 50%;
+        top: 120%;
+        background-color: #5050d2;
+        transition: width 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+a:hover:after,
+a:focus:after {
+  width: 100%;
+}
+//footer
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #5050d2;
+  color: #e0e5e6;
+  // margin: 10px 0 0 0;
+  padding: 0 0 0 25px;
+}
+// header
+.bgimg {
+  background: url(../img/banner_apps.png);
+  background-size: cover;
+  height: 45vh;
+  h1 {
+    padding: 20vh 5px 0 5px;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+// section-home
+
+.home-about {
+  background-color: #f3f2f2;
+  padding: 15px 0;
+  h2 {
+    text-align: center;
+    padding: 15px 5px;
+  }
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+  }
+
+  /* The circles on the timeline */
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #5050d2;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+
+  /* The actual content */
+  .content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    div {
+      flex: 1 0 260px;
+    }
+  }
+}
+
+// APPs
+.container-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin: 45px 0;
+  .box {
+    background-color: #eff3f7;
+    margin: 5px;
+    padding: 20px 70px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    align-self: center;
+    a {
+      text-decoration: none;
+      color: #5050d2;
+    }
+    h3 {
+      margin: 10px 0 0 0;
+      text-align: center;
+    }
+    img {
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 2px #5050d2;
+    }
+  }
+  /*модальне вікно однієї картинки*/
+  .module {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    &:target {
+      border: 2px solid #d4d4d4;
+      background-color: rgba(100, 100, 100, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .description {
+        background-color: #fff;
+        width: 55vw;
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        position: relative;
+        h2 {
+          text-align: center;
+        }
+        hr {
+          border: 1px solid #5050d260;
+        }
+        .close {
+          color: #5050d2;
+          font-size: 38px;
+          font-weight: bold;
+          text-decoration: none;
+          position: absolute;
+          top: 10px;
+          right: 25px;
+        }
+        .about {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          margin: 25px;
+          img {
+            border-radius: 5px;
+          }
+          p {
+            margin: 20px;
+          }
+          @include link;
+        }
+      }
+    }
+  }
+}
+
+// simulation
+.content {
+  max-width: 70vw;
+  margin: auto;
+  padding: 50px 0;
+  @include link;
+}
+.playback {
+  background-color: #000;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+
+  &-iframe {
+    width: 65vw;
+    height: 60vh;
+  }
+}
+
+// example
+.examples {
+  .example {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .module {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    &:target {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .description {
+        // background-color: #fff;
+        // height: auto;
+        // padding: 15px;
+        // .close {
+        //   color: #f00;
+        //   font-size: 38px;
+        //   font-weight: bold;
+        //   text-decoration: none;
+        //   position: absolute;
+        //   top: 27%;
+        //   right: 25%;
+        // }
+        .about {
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          img {
+            border-radius: 5px;
+          }
+          p {
+            margin: 20px;
+          }
+        }
+      }
+    }
+  }
+  // apps
+  .container-apps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // home
+  .home-about {
+    .container::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #5050d2;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+      color: blueviolet;
+    }
+
+    /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+      left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+    .content {
+      flex-direction: column;
+    }
+  }
+  // iframe
+  .playback {
+    padding: 0;
+    &-iframe {
+      width: 90vw;
+      height: 100vh;
+    }
+  }
+}
+@media screen and (max-width: 660px) {
+  // apps
+  .container-apps {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  //menu
+  menu {
+    justify-content: flex-start;
+    li {
+      display: none;
+    }
+    .icon {
+      display: inline-block;
+    }
+  }
+  //nav
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: #fff;
+    flex-direction: column;
+    li {
+      display: inline-block;
+      margin: 10px;
+    }
+    .icon {
+      display: none;
+    }
+  }
+  //module
+  .container-apps {
+    .module {
+      &:target {
+        .description {
+          background-color: #fff;
+          width: 85vw;
+          height: auto;
+          padding: 5px;
+          .about {
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// contact
+
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #5050d2;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
