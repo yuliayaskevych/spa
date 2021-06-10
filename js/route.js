@@ -1,1 +1,0 @@
-export default class Route{constructor(t,e,s){this.name=t,this.htmlName=e,this.default=s}}

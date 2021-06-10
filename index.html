@@ -4,41 +4,43 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IBL</title>
-        <link rel="stylesheet" href="css/styles.min.css">
-        <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+        <title>questions-ibl</title>
+        <link rel="shortcut icon" href="./img/icon.jpg" type="image/x-icon">
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,700&amp;subset=latin-ext"
+            rel="stylesheet" />
         <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous">
     </head>
-    <body>
-        <menu>
-            <li><a href="#home">головна</a></li>
-            <li><a href="#apps">додатки</a></li>
-            <li><a href="#simulation">симуляції</a></li>
-            <li><a href="#graasp">graasp</a></li>
-            <li><a href="#examples">приклади</a></li>
-            <li><a href="#contact">зв'язок</a></li>
+    <body class="container text-center">
+        <h1 class="m-3">Наші дописувачі</h1>
 
-            <li class="icon"><a href="javascript:void(0);">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </li>
-        </menu>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Ім'я</th>
+                    <th scope="col">Прізвище</th>
+                    <th scope="col">Пошта</th>
+                    <th scope="col">Опис</th>
+                    <th scope="col">Звіт</th>
+                </tr>
+            </thead>
+            <tbody id="users"></tbody>
+        </table>
 
-        <div id="app"></div>
-        <footer>
-            <p>&copy; 2021</p>
-        </footer>
-        <script src="js/index.js"></script>
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script type="module" src="js/app.js"></script>
-        <script src="js/contact.js"></script>
-        
+        <script
+            src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+        <script src="index.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+            integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+            crossorigin="anonymous"></script>
     </body>
 </html>
